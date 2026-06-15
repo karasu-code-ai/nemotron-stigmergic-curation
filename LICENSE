@@ -1,0 +1,20 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Karasu, LLC.
+
+This work — the code, corpora-build scripts, writeup, and reproducibility record in this
+repository — is licensed under the Creative Commons Attribution 4.0 International License.
+
+You are free to share and adapt the material for any purpose, including commercially, provided
+you give appropriate credit, link to the license, and indicate if changes were made.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+SPDX-License-Identifier: CC-BY-4.0
+
+ATTRIBUTION (carry these through on reuse):
+- NVIDIA Research — NVIDIA Nemotron Model Reasoning Challenge Competition Data (CC BY 4.0)
+- Tong Hui Kang — open baseline recipe (the reproducibility substrate)
+- bankoglu — hard-families GF(2) chain-of-thought data
+- Google (Gemma), Microsoft (Phi), OpenAI (gpt-oss) — open model weights used for trace generation
+- H. Van Dyke Parunak & Sven Brueckner — polyagent / stigmergy method lineage

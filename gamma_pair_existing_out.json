@@ -1,0 +1,199 @@
+{
+ "independent": {
+ "n_problems": 240,
+ "n_families": 3,
+ "estimator": "jsd",
+ "families": [
+ "gemma",
+ "gptoss",
+ "phi"
+ ],
+ "CID": [
+ {
+ "pair": "gemma|gptoss",
+ "CID": 0.4692
+ },
+ {
+ "pair": "gemma|phi",
+ "CID": 0.7444
+ },
+ {
+ "pair": "gptoss|phi",
+ "CID": 0.7522
+ }
+ ],
+ "validation": {
+ "pred_within": 0.8232434442443902,
+ "pred_cross_unweighted": 0.5225194184703736,
+ "pred_cross_cidweighted": 0.5550122572849374,
+ "gamma_pred_unweighted": 0.6347082653661037,
+ "gamma_pred_cidweighted": 0.6741775609210622,
+ "acc_vote_unweighted": 0.6958333333333333,
+ "acc_vote_cidweighted": 0.6958333333333333,
+ "acc_best_single": 0.7,
+ "n_within": 720,
+ "n_cross": 240
+ }
+ },
+ "nemotron_control": {
+ "n_problems": 150,
+ "n_families": 4,
+ "estimator": "jsd",
+ "families": [
+ "decompositional",
+ "hypothesis_test",
+ "pattern_diff",
+ "positional"
+ ],
+ "CID": [
+ {
+ "pair": "decompositional|hypothesis_test",
+ "CID": 0.396
+ },
+ {
+ "pair": "decompositional|pattern_diff",
+ "CID": 0.3838
+ },
+ {
+ "pair": "decompositional|positional",
+ "CID": 0.4022
+ },
+ {
+ "pair": "hypothesis_test|pattern_diff",
+ "CID": 0.3691
+ },
+ {
+ "pair": "hypothesis_test|positional",
+ "CID": 0.3933
+ },
+ {
+ "pair": "pattern_diff|positional",
+ "CID": 0.3915
+ }
+ ],
+ "validation": {
+ "pred_within": 0.770048758914974,
+ "pred_cross_unweighted": 0.7716493981172285,
+ "pred_cross_cidweighted": 0.4275292390110999,
+ "gamma_pred_unweighted": 1.0020786205856755,
+ "gamma_pred_cidweighted": 0.5551976210097446,
+ "acc_vote_unweighted": 0.5133333333333333,
+ "acc_vote_cidweighted": 0.5133333333333333,
+ "acc_best_single": 0.5133333333333333,
+ "n_within": 600,
+ "n_cross": 150
+ }
+ },
+ "combined_overlap": {
+ "n_problems": 101,
+ "n_families": 7,
+ "estimator": "jsd",
+ "families": [
+ "decompositional",
+ "gemma",
+ "gptoss",
+ "hypothesis_test",
+ "pattern_diff",
+ "phi",
+ "positional"
+ ],
+ "CID": [
+ {
+ "pair": "decompositional|gemma",
+ "CID": 0.4985
+ },
+ {
+ "pair": "decompositional|gptoss",
+ "CID": 0.6184
+ },
+ {
+ "pair": "decompositional|hypothesis_test",
+ "CID": 0.3915
+ },
+ {
+ "pair": "decompositional|pattern_diff",
+ "CID": 0.3818
+ },
+ {
+ "pair": "decompositional|phi",
+ "CID": 0.62
+ },
+ {
+ "pair": "decompositional|positional",
+ "CID": 0.4054
+ },
+ {
+ "pair": "gemma|gptoss",
+ "CID": 0.4681
+ },
+ {
+ "pair": "gemma|hypothesis_test",
+ "CID": 0.4762
+ },
+ {
+ "pair": "gemma|pattern_diff",
+ "CID": 0.4441
+ },
+ {
+ "pair": "gemma|phi",
+ "CID": 0.697
+ },
+ {
+ "pair": "gemma|positional",
+ "CID": 0.5141
+ },
+ {
+ "pair": "gptoss|hypothesis_test",
+ "CID": 0.6357
+ },
+ {
+ "pair": "gptoss|pattern_diff",
+ "CID": 0.6192
+ },
+ {
+ "pair": "gptoss|phi",
+ "CID": 0.7326
+ },
+ {
+ "pair": "gptoss|positional",
+ "CID": 0.667
+ },
+ {
+ "pair": "hypothesis_test|pattern_diff",
+ "CID": 0.3651
+ },
+ {
+ "pair": "hypothesis_test|phi",
+ "CID": 0.6258
+ },
+ {
+ "pair": "hypothesis_test|positional",
+ "CID": 0.3947
+ },
+ {
+ "pair": "pattern_diff|phi",
+ "CID": 0.6268
+ },
+ {
+ "pair": "pattern_diff|positional",
+ "CID": 0.401
+ },
+ {
+ "pair": "phi|positional",
+ "CID": 0.625
+ }
+ ],
+ "validation": {
+ "pred_within": 0.8002616744594978,
+ "pred_cross_unweighted": 0.7415816824442225,
+ "pred_cross_cidweighted": 0.3805856629334134,
+ "gamma_pred_unweighted": 0.9266739944095059,
+ "gamma_pred_cidweighted": 0.4755765208804527,
+ "acc_vote_unweighted": 0.594059405940594,
+ "acc_vote_cidweighted": 0.6138613861386139,
+ "acc_best_single": 0.7227722772277227,
+ "n_within": 707,
+ "n_cross": 101
+ }
+ }
+}

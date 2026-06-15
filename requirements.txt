@@ -1,0 +1,36 @@
+# Dependencies. On the Spark, do NOT pip-install torch the naive way (see notes).
+#
+# SPARK REALITY (2026-05-31, NVIDIA GB10 / aarch64 / CUDA 13 / sm_121):
+# - torch: installed the official aarch64 wheel from download.pytorch.org/whl/cu130
+# pip install "torch==2.10.0+cu130" --index-url https://download.pytorch.org/whl/cu130
+# (no borrowable system torch existed; this is the one exception to "don't pip torch").
+# - transformers: PINNED 4.53.3. This model (NVIDIA-Nemotron-3-Nano-30B, hybrid
+# Mamba2-Transformer) ships remote code that is VERSION-FRAGILE:
+# * 5.x -> generation crash (prepare_inputs_for_generation, cache_position=None)
+# * 4.55.4 (the value in config.json) -> crash: 4.54 cache refactor made
+# DynamicCache.key_cache a read-only property, but the model assigns to it.
+# * 4.53.3 (pre-refactor) -> WORKS (loads + generates). Use this.
+# 4.53.3 keeps huggingface_hub at 0.34.4 (fine for inference).
+# - Mamba fast path: built mamba-ssm + causal-conv1d FROM SOURCE for sm_121
+# (TORCH_CUDA_ARCH_LIST=12.1, *_FORCE_BUILD=TRUE, --no-build-isolation). No
+# aarch64 wheels exist. Needs python3.12-dev (Python.h) + ninja. Without these
+# kernels the model still runs via nemotron_compat.py's pure-torch rmsnorm_fn
+# shim, but ~0.09 tok/s (unusably slow); with them it's the fast path.
+# - peft/trl (training, Part 7) want transformers>=4.56 + huggingface_hub>=1.0,
+# which CONFLICTS with the 4.53.3 inference pin. Reconcile at training time
+# (separate venv, or re-pin then) — they are not needed for generate/eval.
+
+torch==2.10.0+cu130 # Spark: official cu130 aarch64 wheel (see notes)
+transformers==4.53.3 # PINNED: model remote code needs pre-4.54 cache API
+huggingface_hub==0.34.4 # what transformers 4.53.3 pulls; fine for inference
+mamba-ssm # built from source for sm_121 (fast path)
+causal-conv1d # built from source for sm_121 (fast path)
+ninja # build dep for the two kernels above
+datasets
+accelerate
+pandas
+peft>=0.12 # TRAINING ONLY (Part 7); see version-conflict note above
+trl>=0.11 # TRAINING ONLY (Part 7); see version-conflict note above
+
+# vLLM: NVIDIA's model card blesses it for DGX Spark (pip install "vllm>=0.12.0"),
+# but it pulls its own torch and ARM+Blackwell support is uncertain; not used here.

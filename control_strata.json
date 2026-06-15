@@ -1,0 +1,82 @@
+{
+ "source": "census_v2.py (R0 enumerate-and-count, manifest 6c3d46f1)",
+ "family": "cryptarithm_deduce",
+ "note": "R0 walls for the \u00a73 three-walls keystone. gold_output@any = gold-reachable fraction. Operationalization-cost wall (0.13) is the generative-proposer experiment, cross-ref only.",
+ "RESIDUAL_rule_unknown": {
+ "n": 559,
+ "identifiability_status": {
+ "rule_identified": 15,
+ "output_identified": 1,
+ "prior_selected": 7,
+ "unidentified": 7,
+ "dsl_miss": 529,
+ "R0_implementation_gap": 0
+ },
+ "determined_wrong": 16,
+ "gold_match": 7,
+ "factory_eligible_identified_x_goldmatch": 0,
+ "gold_output_atK": {
+ "1": 0.0,
+ "3": 0.0054,
+ "5": 0.0089,
+ "any": 0.0125
+ },
+ "selector_regret": {
+ "in_candidate_set": 7,
+ "not_top1": 7
+ }
+ },
+ "CONTROL_rule_found": {
+ "n": 54,
+ "identifiability_status": {
+ "rule_identified": 54,
+ "output_identified": 0,
+ "prior_selected": 0,
+ "unidentified": 0,
+ "dsl_miss": 0,
+ "R0_implementation_gap": 0
+ },
+ "determined_wrong": 0,
+ "gold_match": 54,
+ "factory_eligible_identified_x_goldmatch": 54,
+ "gold_output_atK": {
+ "1": 1.0,
+ "3": 1.0,
+ "5": 1.0,
+ "any": 1.0
+ },
+ "selector_regret": {
+ "in_candidate_set": 54,
+ "not_top1": 0
+ }
+ },
+ "CONTROL_hypothesis_formed": {
+ "n": 46,
+ "identifiability_status": {
+ "rule_identified": 35,
+ "output_identified": 3,
+ "prior_selected": 1,
+ "unidentified": 1,
+ "dsl_miss": 6,
+ "R0_implementation_gap": 0
+ },
+ "determined_wrong": 0,
+ "gold_match": 39,
+ "factory_eligible_identified_x_goldmatch": 38,
+ "gold_output_atK": {
+ "1": 0.8478,
+ "3": 0.8478,
+ "5": 0.8478,
+ "any": 0.8478
+ },
+ "selector_regret": {
+ "in_candidate_set": 39,
+ "not_top1": 0
+ }
+ },
+ "three_walls_spark_side": {
+ "coverage_wall": "R0 gold_output@1=0.000, @any=0.013 on the 559 residual",
+ "identifiability_wall": "determined_wrong=16 + selector_regret 7/7",
+ "operationalization_cost": "0.13 on determined substrate \u2014 the generative-proposer experiment (cross-ref)"
+ }
+}
